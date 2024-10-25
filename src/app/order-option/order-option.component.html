@@ -16,7 +16,7 @@
       <div class="contentArea">
         <!-- Content for 'توصيل' tab -->
         <div *ngIf="activeTab === 'delivery'">
-
+<app-delivery></app-delivery>
         </div>
 
         <!-- Content for 'استلام' tab -->
@@ -28,6 +28,8 @@
         <!-- Content for 'من السيارة' tab -->
         <div *ngIf="activeTab === 'drive'">
           <!-- <app-pickup></app-pickup> -->
+           <app-drive></app-drive>
+
         </div>
       </div>
       <!-- ./Content Area -->

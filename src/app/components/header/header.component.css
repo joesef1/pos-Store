@@ -1,0 +1,151 @@
+/* .header{
+  padding-top: calc(65px + 1rem);
+  padding-bottom: 1rem;
+  width: 100%;
+}
+.header-container {
+  background-color: #850000;
+  padding: 10px 0;
+}
+.header-content{
+      position: fixed;
+      top: 0px;
+      width: 100%;
+      z-index: 2;
+  }
+
+.container{
+
+  margin: 0 auto;
+  width: 68%;
+}
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 calc(1.5rem * 0.5)
+
+
+
+}
+
+.menu-bar {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 4px 8px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+
+  direction: ltr;
+  cursor: pointer;
+}
+
+.header-dropdown-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-dropdown {
+  display: flex;
+  align-items: center;
+  gap: .25rem ;
+}
+
+.arrow-down {
+  font-size: 16px;
+  cursor: pointer;
+  width: 35px;
+  text-align: center;
+
+}
+
+.food-type {
+  display: flex;
+  flex-direction: column;
+}
+
+.food-type > div{
+  text-align: left;
+}
+
+.food-type-1 {
+  font-size: 11px;
+  color: #474b46;
+}
+
+.food-type-2 {
+  font-size: 13px;
+  color: #474b46;
+  font-weight: 700 !important;
+}
+
+.food-type :nth-child(2) {
+  transform: translateY(-1px);
+
+}
+
+.menu-btn-container {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.burger-menu {
+  cursor: pointer;
+  width: 30px;
+  height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burger-menu span {
+  width: 80%;
+  height: 2px;
+  background-color: #474b46;
+  border-radius: 5px;
+}
+.menu-side-btn {
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: rgb(71, 75, 70);
+  cursor: pointer;
+  direction: rtl;
+  display: flex;
+  flex-shrink: 0;
+  font-family: 'icomoon';
+  font-size: 30px;
+  font-weight: 400;
+  height: 45px;
+  justify-content: center;
+  line-height: 30px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 0px;
+  margin-top: 0px;
+  outline: none;
+  padding: 0px;
+  scroll-behavior: smooth;
+  text-align: right;
+  text-size-adjust: 100%;
+  unicode-bidi: isolate;
+  user-select: auto;
+  width: 45px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.icon-menu:before {
+  content:"";
+} */

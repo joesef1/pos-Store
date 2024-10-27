@@ -1,0 +1,159 @@
+.loginModalWrapper{
+  overflow: hidden ;
+  display: flex ;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) ;
+  position: fixed ;
+  top: 0 ;
+  bottom: 0 ;
+  bottom: 0 ;
+  left: 0 ;
+  right: 0 ;
+  flex-direction: column ;
+  justify-content: space-between ;
+  margin: auto ;
+  border-radius: 0.5rem ;
+  background-color: #fff;
+  z-index: 99999;
+  width: 350px;
+  max-height: calc(100vh - 1rem);
+  max-width: calc(100vw - 1rem);
+  height: -moz-fit-content;
+  height: fit-content;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.general-Modal-Header{
+  display: flex ;
+  flex-shrink: 0 ;
+  justify-content: space-between ;
+  align-items: center ;
+  padding: 1rem ;
+
+}
+
+.general-Modal-Header span{
+  font-weight: 700 ;
+  display: block ;
+
+}
+
+
+
+.modalContent {
+  grid-gap: .5rem ;
+  gap: .5rem ;
+  padding: 1rem ;
+  flex-grow: 1 ;
+  flex-direction: column ;
+  display: flex ;
+  overflow: auto ;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+
+.closeModalBtn {
+  /* background-image: url(); */
+  width: 32px;
+  height: 32px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-color: hsla(0, 0%, 100%, .64);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, .16);
+  cursor: pointer;
+  border-radius: 50% ;
+  padding: 0 ;
+  border: 0 ;
+  text-transform: none;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.closeModalBtn i {
+  font-size: 20px;
+}
+
+.phoneInput{
+  height: 50px;
+  border-radius: 0.5rem;
+  background-color: rgba(#fff, 1) ;
+  align-items: center ;
+  justify-content: center ;
+  border: 1px solid #dee2e6 ;
+  display: flex ;
+  overflow: hidden ;
+}
+
+.phoneInput span{
+  border-right: 1px solid #dee2e6;
+  min-width: 50px;
+  background-color: rgba(248,249,250, 1) ;
+  color: rgba( 33,37,41, 1) ;
+  align-self: stretch ;
+  align-items: center ;
+  justify-content: center ;
+  flex-shrink: 0 ;
+  display: flex ;
+}
+
+.phoneInput input{
+  background-color: rgba(255,255,255, 1) ;
+  color: rgba(33,37,41, 1) ;
+  padding-top: 0 ;
+  padding-bottom: 0 ;
+  padding-right: .5rem ;
+  padding-left: .5rem ;
+  align-self: stretch ;
+  flex-grow: 1 ;
+  border: 0 ;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+.modalContent button{
+  cursor: pointer;
+    font-weight: 700 ;
+    background-color: #850000;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,.3) 0 0 15 0;
+    height: 50px;
+    transition: .2s;
+    width: 100% ;
+    border: 0 ;
+    text-transform: none;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px); /* Apply blur */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: all .4s ease-in-out;
+  z-index: 1000;
+}
+
+.dialog-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}

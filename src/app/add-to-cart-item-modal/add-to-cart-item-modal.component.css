@@ -18,11 +18,18 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
+  padding-left: 1px;
+  padding-top: 1px;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
 }
 
 .product-image {
   width: 100%;
   margin-bottom: 15px;
+  border-radius: 10px 10px 0 0;
 }
 
 .product-info {
@@ -51,7 +58,7 @@
 }
 
 .add-to-cart {
-  background-color: #ff6600;
+  background-color: #850000;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -116,7 +123,9 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   z-index: 999; /* Ensure it's above other elements */
+
 }
+
 
 .product-modal {
   position: fixed;

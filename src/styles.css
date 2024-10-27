@@ -157,7 +157,7 @@ body {
 
 .main-section {
   display: flex;
-  padding: 0 12px;
+  /* padding: 0 12px; */
 }
 
 
@@ -177,6 +177,10 @@ body {
 
 
 /* cart */
+.cart-section{
+  padding: 0 12px;
+}
+
 @media (max-width: 1000px) {
   .sidebar {
     width: 33.33333%;

@@ -283,3 +283,7 @@ height: 55px;
   display: block;
 }
 }
+
+.sidebar{
+  padding: 0 12px !important;
+}

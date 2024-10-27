@@ -108,6 +108,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
+
+  //! enter phone number section
+  // const closeModalBtn = document.getElementById("closeModalBtn");
+  // const loginModal = document.getElementById("loginModal");
+  // const dialogOverlay = document.getElementById("dialog-overlay");
+
+  // // Function to hide the modal and overlay
+  // function hideModal() {
+  //   loginModal.style.display = "none";
+  //   dialogOverlay.style.display = "none";
+  // }
+
+  // // Add event listener to the close button
+  // closeModalBtn.addEventListener("click", hideModal);
+
+  // // Add event listener to the overlay
+  // dialogOverlay.addEventListener("click", hideModal);
+  // //! ./enter phone number section
+
+
+
 });
 
 
@@ -119,7 +141,7 @@ function scrollToCategory(event, categoryId) {
   const element = document.getElementById(categoryId);
   if (element) {
     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-    const offsetPosition = elementPosition - 200;
+    const offsetPosition = elementPosition - 125;
 
     window.scrollTo({
       top: offsetPosition,
@@ -163,5 +185,9 @@ function handleScroll() {
   }
 }
 
+
+
 // Listen to the scroll event
 window.addEventListener('scroll', handleScroll);
+
+

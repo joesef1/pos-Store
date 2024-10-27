@@ -17,12 +17,15 @@
         <!-- Content for 'توصيل' tab -->
         <div *ngIf="activeTab === 'delivery'">
 <app-delivery></app-delivery>
+<app-phone-popup></app-phone-popup>
+<!-- <app-code-verification></app-code-verification> -->
+
         </div>
 
         <!-- Content for 'استلام' tab -->
         <div *ngIf="activeTab === 'pickup'">
-          <!-- <app-pickup></app-pickup> -->
-           <app-branch-item></app-branch-item>
+          <app-pickup></app-pickup>
+
         </div>
 
         <!-- Content for 'من السيارة' tab -->
@@ -40,3 +43,5 @@
     </div>
   </div>
 </div>
+
+

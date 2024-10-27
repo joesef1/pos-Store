@@ -1,0 +1,24 @@
+<div *ngIf="isModalVisible" role="dialog" class="loginModalWrapper">
+  <div class="general-Modal-Header">
+    <span class="d-block fw-bold">التحقق من رقم الهاتف</span>
+    <button type="button" class="closeModalBtn" (click)="closeModal()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="modalContent">
+    <div dir="ltr" class="phoneInput">
+      <span>+966</span>
+      <input
+        type="tel"
+        inputmode="numeric"
+        maxlength="9"
+        placeholder="55XXXXXXX"
+        class="border-0 px-2 py-0 flex-grow-1 align-self-stretch bg-white text-body"
+      />
+    </div>
+    <button type="submit" class="btnStyle w-100 border-0 fw-bold">التالي</button>
+  </div>
+</div>
+
+<!-- overlay -->
+<div *ngIf="isModalVisible" id="dialog-overlay" class="dialog-overlay active" (click)="closeModal()"></div>

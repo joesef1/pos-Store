@@ -3,7 +3,7 @@
   padding: 0 12px;
   text-align: right;
   width: 330px;
-  background-color: #850000;
+  background-color: #65725B;
 }
 
 
@@ -134,10 +134,13 @@
   cursor: pointer;
   border-radius: 5px;
 }
+.quantity .btn-delete i{
+  color: #fff;
+}
 
 .quantity .btn-decrease,
 .quantity .btn-increase {
-  background-color: #850000;
+  background-color: #65725B;
   border: none;
   color: white;
   font-size: 18px;
@@ -171,7 +174,7 @@
 
 .execute-btn {
   width: 100%;
-  background-color: #850000;
+  background-color: #65725B;
   color: white;
   padding: 10px 0;
   border: none;
@@ -225,7 +228,7 @@ width: 100%;
 box-shadow: rgba(0,0,0,.3) 0 0 15 0;
 border-radius: 5px;
 color: #fff;
-background: #850000;
+background: #65725B;
 height: 55px;
 }
 
@@ -257,7 +260,7 @@ height: 55px;
 
 .itemsCount small{
   background-color: #ffffff;
-  color:  #850000;
+  color:  #65725B;
   top: -4px;
   min-width: 18px;
   min-height: 18px;
@@ -269,7 +272,7 @@ height: 55px;
   align-items: center ;
   font-weight: 700 ;
   right: 0;
-  border: 1px solid #850000;
+  border: 1px solid #65725B;
 }
 
 

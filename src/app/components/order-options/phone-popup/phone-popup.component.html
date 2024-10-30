@@ -1,4 +1,6 @@
-<div *ngIf="isModalVisible" role="dialog" class="loginModalWrapper">
+
+
+<div [ngClass]="{'show': isModalVisible, 'hide': !isModalVisible}" role="dialog" class="loginModalWrapper">
   <div class="general-Modal-Header">
     <span class="d-block fw-bold">التحقق من رقم الهاتف</span>
     <button type="button" class="closeModalBtn" (click)="closeModal()">
@@ -20,5 +22,5 @@
   </div>
 </div>
 
-<!-- overlay -->
-<div *ngIf="isModalVisible" id="dialog-overlay" class="dialog-overlay active" (click)="closeModal()"></div>
+<!-- Overlay -->
+<div [ngClass]="{'active': isModalVisible}" id="dialog-overlay" class="dialog-overlay" (click)="closeModal()"></div>

@@ -9,8 +9,8 @@
         </div>
       </div>
 
-      <div class="bg-white menu-bar"  (click)="toggleDivVisibility()">
-        <div class="header-dropdown-container">
+      <!-- <div class="bg-white menu-bar"  (click)="toggleDivVisibility()">
+        <div id="menu-bar" class="header-dropdown-container">
           <div class="header-dropdown">
             <div class="arrow-down">  <i class="fas fa-chevron-down"></i></div>
 
@@ -24,8 +24,34 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
+      <!-- if the order completed -->
+         <div class="bg-white menu-bar"  >
+        <div id="menu-bar"    class="header-dropdown-container ">
+          <div class="header-dropdown">
+            <div class="arrow-down">  <i class="fas fa-truck"></i></div>
+
+            <div class="food-type">
+              <div>
+                <span class="food-type-1"> استلام من</span>
+              </div>
+              <div>
+                <span class="food-type-2"> بوليفارد المحمدية</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div  class="timeTypeBtn "><small  class="d-block">
+          وقت الطلب
+        </small> <span  class="d-block fw-bold">
+          الآن
+        </span></div>
+      </div>
+      <!-- ./if the order completed -->
+
+<app-order-time></app-order-time>
 
 
     </div>

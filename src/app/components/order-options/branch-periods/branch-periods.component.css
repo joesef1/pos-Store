@@ -22,6 +22,7 @@
     display: flex ;
 }
 
+
 .general-Modal-Header{
   padding: 1rem ;
     align-items: center ;
@@ -128,9 +129,12 @@
 
 
 .tabButton.current {
-  background-color: #850000;
+  background-color: #65725B;
   color:  #fff;
 }
+
+
+
 
 
 .time-overlay {
@@ -141,14 +145,96 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px); /* Apply blur */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-  transition: all .4s ease-in-out;
-  z-index: 1000;
+  opacity: 0; /* Start hidden */
+  visibility: hidden; /* Ensure it's hidden initially */
+  transition: opacity 1s ease; /* Only opacity transition */
+  z-index: 1000; /* Ensure it is above other content */
 }
 
-.time-overlay.active {
-  opacity: 1;
-  visibility: visible;
+.time-overlay.show {
+  opacity: 1; /* Fade in */
+  visibility: visible; /* Make visible */
 }
+
+.time-overlay.hide {
+  opacity: 0; /* Fade out */
+  visibility: hidden; /* Hide after fade out */
+}
+
+
+
+
+
+
+
+
+
+/* animation  */
+
+.branchPeriodsModalWrapper {
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction when hidden */
+  transition: opacity 0.3s ease; /* Adjust the opacity transition */
+}
+
+.branchPeriodsModalWrapper.show{
+  opacity: 1;
+  pointer-events: auto; /* Allow interaction when visible */
+  animation: moveDownAndBounce 0.5s forwards; /* Play the show animation */
+}
+
+.branchPeriodsModalWrapper.hide{
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction when hidden */
+  animation: moveUpAndScale 0.5s forwards; /* Play the hide animation */
+}
+
+@keyframes moveDownAndBounce {
+  0% {
+    transform: scale(0) translateY(-100%); /* Start scaled down and off-screen above */
+    opacity: 0;
+  }
+
+  60% {
+    opacity: .5;
+  }
+
+  100% {
+    transform: scale(1) translateY(0); /* Settle at final position */
+    opacity: 1;
+  }
+}
+
+@keyframes moveUpAndScale {
+  0% {
+    transform: scale(1) translateY(0); /* Start at normal scale and position */
+    opacity: 1;
+  }
+
+  60% {
+    opacity: .5;
+  }
+
+  100% {
+    transform: scale(0) translateY(-100%); /* Scale down and move off-screen above */
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

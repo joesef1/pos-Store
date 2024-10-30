@@ -5,10 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const sideNav = document.getElementById('side-nav');
   const overlay = document.getElementById('overlay');
   const menuBarOverlay = document.getElementById('menuBarOverlay');
+  const orderTimeOverlay = document.getElementById('orderTimeOverlay');
   const closeBtn = document.getElementById('close-btn');
   const itemCards = document.querySelectorAll('.item-card');
-  const menuBar = document.querySelector('.menu-bar');
+  const menuBar = document.getElementById('menu-bar');
+  const timeTypeBtn = document.querySelector('.timeTypeBtn');
   const stickySection = document.querySelector('.order-type');
+  const timeTypeModalWrapper = document.querySelector('.timeTypeModalWrapper');
 
   // Selectors for product modal
   const productModal = document.querySelector('.product-modal'); // Assuming the product modal has this class
@@ -55,11 +58,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
   if (menuBarOverlay) {
     menuBarOverlay.addEventListener('click', () => {
       hideStickySection();
     });
   }
+
+
+   //!timeTypeBtn
+   orderTimeOverlay.addEventListener('click', () => {
+    hideTimeTypeSection();
+  });
+
+  const TimeTypeCloseIcon = document.getElementById("TimeTypeCloseIcon")
+  TimeTypeCloseIcon.addEventListener('click', () => {
+    hideTimeTypeSection();
+  });
+
+  timeTypeBtn.addEventListener('click', () => {
+    showTimeTypeSection();
+  });
+
+
+
+///!
 
   // Sticky section toggle functions
   function toggleStickySection() {
@@ -74,6 +97,41 @@ document.addEventListener('DOMContentLoaded', () => {
     menuBarOverlay.classList.remove('active');
   }
 
+  //!timeTypeBtn
+  function showTimeTypeSection() {
+    timeTypeModalWrapper.classList.toggle('show');
+    timeTypeModalWrapper.classList.remove('hide');
+    orderTimeOverlay.classList.add('active');
+    console.log("ggg");
+
+  }
+
+  function hideTimeTypeSection() {
+    timeTypeModalWrapper.classList.remove('show');
+    timeTypeModalWrapper.classList.add('hide');
+    orderTimeOverlay.classList.remove('active');
+  }
+  //!addtoCardOverlay
+
+
+   //!addtoCardOverlay
+   const addtoCardOverlay = document.getElementById("addtoCardOverlay")
+   const menuItemModal = document.getElementById("menu-item-modal")
+   const menuItemModalWrapperIcon = document.getElementById("menuItemModalWrapperIcon")
+
+  //  addtoCardOverlay.addEventListener('click', () => {
+  //    hideTimeTypeSection();
+  //  });
+
+  //  menuItemModalWrapperIcon.addEventListener('click', () => {
+  //    hideTimeTypeSection();
+  //  });
+
+  //  itemCards.addEventListener('click', () => {
+  //    showTimeTypeSection();
+  //  });
+
+
   // Item card interaction for each item card
   itemCards.forEach(itemCard => {
     itemCard.addEventListener('click', () => {
@@ -83,27 +141,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to show the product modal
   function showProductModal() {
-    productModal.classList.add('active'); // Show the modal
-    productModalOverlay.classList.add('active'); // Show the overlay
+    menuItemModal.classList.toggle('show');
+    menuItemModal.classList.remove('hide');
+    addtoCardOverlay.classList.add('active');
 
   }
 
   // Function to hide the product modal
   function hideProductModal() {
-    productModal.classList.remove('active'); // Hide the modal
-    productModalOverlay.classList.remove('active'); // Hide the overlay
+    menuItemModal.classList.remove('show');
+    menuItemModal.classList.add('hide');
+    addtoCardOverlay.classList.remove('active');
   }
 
   // Event listener for closing the modal using close button
-  if (productCloseBtn) {
-    productCloseBtn.addEventListener('click', () => {
+  if (menuItemModalWrapperIcon) {
+    menuItemModalWrapperIcon.addEventListener('click', () => {
       hideProductModal();
     });
   }
 
   // Event listener for closing the modal by clicking the overlay
-  if (productModalOverlay) {
-    productModalOverlay.addEventListener('click', () => {
+  if (addtoCardOverlay) {
+    addtoCardOverlay.addEventListener('click', () => {
       hideProductModal();
     });
   }

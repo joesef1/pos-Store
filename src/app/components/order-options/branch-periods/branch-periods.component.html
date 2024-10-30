@@ -1,4 +1,4 @@
-<div *ngIf="showModal" class="branchPeriodsModalWrapper" role="dialog">
+<div [ngClass]="{'show': showModal, 'hide': !showModal}" class="branchPeriodsModalWrapper" role="dialog">
   <div class="general-Modal-Header">
     <span class="d-block fw-bold">مواعيد الفرع</span>
     <button type="button" class="closeModalBtn" (click)="closeModal()">
@@ -26,4 +26,4 @@
   </div>
 </div>
 
-<div *ngIf="showModal" class="time-overlay active" (click)="closeModal()"></div>
+<div [ngClass]="{'show': showModal, 'hide': !showModal}" class="time-overlay" (click)="closeModal()"></div>

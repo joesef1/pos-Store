@@ -4,7 +4,7 @@
   width: 100%;
 }
 .header-container {
-  background-color: #850000;
+  background-color: #65725B;
   padding: 10px 0;
 }
 .header-content{
@@ -149,3 +149,33 @@
 .icon-menu:before {
   content:"";
 } */
+
+
+
+
+/* if the order completed */
+.timeTypeBtn{
+  margin-left: 10px;
+  min-width: 140px;
+  color: #F3F3ED;
+  border-radius: 5px;
+  cursor: pointer;
+  padding-right: 0.5rem ;
+  padding-left: 0.5rem ;
+  align-items: flex-start ;
+  justify-content: center ;
+  flex-shrink: 0 ;
+  flex-direction: column ;
+  display: flex
+}
+
+.timeTypeBtn small{
+  font-size: 11px;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.timeTypeBtn span{
+  font-size: 13px;
+    line-height: 1;
+}

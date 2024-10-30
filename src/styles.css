@@ -236,7 +236,7 @@ body {
   padding: 0 12px;
   text-align: right;
   width: 330px;
-  background-color: #850000;
+  background-color: #65725B;
 }
 
 /*  */
@@ -249,7 +249,7 @@ body {
   position: sticky !important;
   margin-bottom: 1rem; /* Bottom margin */
   top: calc(65px + 1rem);
-  z-index: 99;
+  /* z-index: 99; */
 }
 
 .cart-area {
@@ -451,7 +451,7 @@ body {
   align-items: center;
 }
 .card-content-price-2 {
-  color: #850000;
+  color: #65725B;
   background-color: rgba(0, 0, 0, 0.03);
   min-height: 27px;
   font-size: 14px;
@@ -469,7 +469,7 @@ body {
   justify-content: center;
 
   font-size: 14px;
-  color: #850000;
+  color: #65725B;
 }
 
 .card-content-price-3 small {
@@ -520,34 +520,69 @@ body {
 }
 
 .order-type.show {
-  animation: moveUpAndScale 0.7s ease-in-out forwards;
+  animation: moveDownAndBounce 0.5s  forwards;
 }
 
 .order-type.hide {
-  animation: moveDownAndScale 0.7s ease-in-out forwards;
+  animation: moveUpAndScale 0.5s  forwards;
+}
+
+
+.timeTypeModalWrapper.show {
+  animation: moveDownAndBounce 0.5s  forwards;
+}
+
+.timeTypeModalWrapper.hide {
+  animation: moveUpAndScale 0.5s  forwards;
+}
+
+.menuItemModalWrapper.show {
+  animation: moveDownAndBounce 0.5s  forwards;
+}
+
+.menuItemModalWrapper.hide {
+  animation: moveUpAndScale 0.5s  forwards;
+}
+
+
+
+
+
+
+
+@keyframes moveDownAndBounce {
+  0% {
+    transform: scale(0) translateY(-100%); /* Start scaled down and off-screen above */
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  60% {
+    opacity: .5;
+  }
+
+  100% {
+    transform: scale(1) translateY(0); /* Settle at final position */
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes moveUpAndScale {
   0% {
-    transform: scale(0); /* Start position (scaled down) */
-    opacity: 0;
+    transform: scale(1) translateY(0); /* Start at normal scale and position */
+    opacity: 1;
+    visibility: visible;
+  }
+
+  60% {
+    opacity: .5;
   }
 
   100% {
-    transform: scale(1); /* Final position */
-    opacity: 1;
-  }
-}
-
-@keyframes moveDownAndScale {
-  0% {
-    transform: scale(1); /* Start position */
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(0); /* Final position (scaled down) */
+    transform: scale(0) translateY(-100%); /* Scale down and move off-screen above */
     opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -576,7 +611,7 @@ body {
 }
 
 .tabsArea button.active {
-  background-color: #850000;
+  background-color: #65725B;
   color: #fff;
 }
 
@@ -708,7 +743,7 @@ body {
   width: 100%;
 }
 .header-container {
-  background-color: #850000; /* Updated background color to match the red in the image */
+  background-color: #65725B; /* Updated background color to match the red in the image */
   padding: 10px 0;
 }
 .header-content{
@@ -737,10 +772,9 @@ body {
   flex-grow: 1;
   display: flex;
   align-items: center;
-  background-color: #fff; /* White background for the dropdown section */
+  background-color: transparent; /* White background for the dropdown section */
   border-radius: 5px;
   padding: 4px 8px; /* Add padding inside the menu bar */
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow to add depth */
 
   direction: ltr;
   cursor: pointer;
@@ -764,7 +798,7 @@ body {
   cursor: pointer;
   width: 35px;
   text-align: center;
-
+color: #fff;
 }
 
 .food-type {
@@ -778,12 +812,12 @@ body {
 
 .food-type-1 {
   font-size: 11px;
-  color: #474b46;
+  color: #fff;
 }
 
 .food-type-2 {
   font-size: 13px;
-  color: #474b46;
+  color: #fff;
   font-weight: 700 !important;
 }
 
@@ -812,7 +846,7 @@ body {
 .burger-menu span {
   width: 80%;
   height: 2px;
-  background-color: #474b46;
+  background-color: #fff;
   border-radius: 5px;
 }
 
@@ -849,7 +883,7 @@ body {
   right: -437px; /* Hidden initially */
   width: 437px;
   opacity: 0;
-  background-color: #ffffff;
+  background-color: #65725B;
   transition: all .6s ease-in-out;
   z-index: 1001;
   border-radius: 0.5rem;
@@ -876,10 +910,10 @@ body {
   text-decoration: none;
   display: block;
   padding: 13px 0;
-  color: #000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
-
+  color: #fff;
   text-align: right;
+  border-bottom: 1px solid rgba(255,255,255, .09); /* dynamic */
+
 }
 
 
@@ -965,7 +999,6 @@ body {
   width: 45px;
   height: 45px;
   cursor: pointer;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, .15);
   border-radius: 0.5rem;
   display: flex !important;
   justify-content: center !important;
@@ -976,6 +1009,7 @@ body {
 .closeSidebarMenuModalBtn svg {
   width: 20px;
   height: 20px;
+
 }
 
 
@@ -987,7 +1021,7 @@ body {
 /*  */
 .menu-side-btn {
   align-items: center;
-  background-color: rgb(255, 255, 255);
+  background-color: transparent;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-top-left-radius: 5px;
@@ -1255,7 +1289,7 @@ display: none;
 
 
 .group-list li a.active{
-    background-color: #850000;
+    background-color: #65725B;
     color:  #fff;
 }
 
@@ -1282,4 +1316,117 @@ display: none;
     .mobile-category-list-container{
         display: block;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* / */
+:root {
+  --bodyBackgroundColor: #ffffff;
+  --popUpBackgroundColor: #F3F3ED;
+  --popUpBackgroundColorRGB: 243, 243, 237;
+  --bodyTextColor: #A39172;
+  --bodySecondaryTextColor: #A39172;
+  --navbarBackgroundColor: 101, 114, 91;
+  --navbarBackgroundColorScrolling: #65725B;
+  --navbarFieldsBackgroundColor: #65725B;
+  --navbarFieldsTextColor: #F3F3ED;
+  --navbarFieldsBoxShadow: rgba(0, 0, 0, 0.15) 0 0 15;
+  --navbarFieldsBorderRadius: 5px;
+  --sidebarBackgroundColor: #65725B;
+  --sidebarTextColor: #FFFF;
+  --sidebarBorderColor: 255, 255, 255;
+  --sidebarSelectedTextColor: #65725B;
+  --homeDesktopBG: none;
+  --homePhoneBG: none;
+  --headerDesktopBG: none;
+  --headerPhoneBG: none;
+  --homeTextColor: #ffffff;
+  --headerText: #ffffff;
+  --buttonBG: #A39172;
+  --buttonBGHover: 163, 145, 114;
+  --buttonText: #ffffff;
+  --buttonsBorderRadius: 5px;
+  --buttonsBoxShadow: rgba(0, 0, 0, 0.3) 0 0 15 0;
+  --tabsBG: #FFFF;
+  --tabsText: #777777;
+  --tabsSelectedBG: #65725B;
+  --tabsSelectedText: #ffffff;
+  --blockBG: #F3F3ED;
+  --blockBGRGB: 243, 243, 237;
+  --blockBorderColor: #A39172;
+  --blockTextColor: #65725B;
+  --priceColor: #D0A328;
+  --blockBoxShadow: rgba(0, 0, 0, 0) 0 0 8px 1px;
+  --blockBorderRadius: 15px;
+  --footerBG: #000000;
+  --footerText: #ffffff;
+  --footerSelectedText: #f1f1f1;
+  --twitterIconColor: #ffffff;
+  --instagramIconColor: #ffffff;
+  --tiktokIconColor: #ffffff;
+  --facebookIconColor: #ffffff;
+  --snapchatIconColor: #f0b042;
+  --youtubeIconColor: #ffffff;
+  --whatsappIconColor: #2f653a;
+  --categoryMenuTextColor: #65725B;
+  --reservationFontStyle: 'IBM Plex Sans Arabic', sans-serif;
+  --reservationPrimaryText: #000000;
+  --reservationSecondaryText: #878787;
+  --reservationBGcolor: #ffffff;
+  --reservationBlockBorderColor: #ededed;
+  --reservationBlockBGColor: #ffffff;
+  --reservationBlockBorderRadius: 10px;
+  --reservationBtnBorderRadius: 5px;
+  --reservationBtnTextColor: #ffffff;
+  --reservationBtnBgColor: #EF2811;
+  --waitingFontStyle: 'IBM Plex Sans Arabic', sans-serif;
+  --waitingPrimaryText: #000000;
+  --waitingSecondaryText: #878787;
+  --waitingBGcolor: #ffffff;
+  --waitingBlockBGColor: #ffffff;
+  --waitingBlockBorderColor: #ededed;
+  --waitingBlockBorderRadius: 10px;
+  --waitingBtnBorderRadius: 5px;
+  --waitingBtnTextColor: #ffffff;
+  --waitingBtnBgColor: #EF2811;
+  --waitingNoWaitingListStatusCircleBgColor: #E2FEF0;
+  --waitingNoWaitingListStatusCircleBorderColor: #42C684;
+  --waitingNoWaitingListStatusCircleTextColor: #000000;
+  --waitingInQueueStatusCircleBgColor: #F6EFFF;
+  --waitingInQueueStatusCircleBorderColor: #9464CD;
+  --waitingInQueueStatusCircleTextColor: #000000;
+  --waitingOutOfServiceStatusCircleBgColor: #FDF7ED;
+  --waitingOutOfServiceStatusCircleBorderColor: #EDA33C;
+  --waitingOutOfServiceStatusCircleTextColor: #000000;
+  --dynamicBackgroundColor: rgba(255, 255, 255, 0.9);
 }

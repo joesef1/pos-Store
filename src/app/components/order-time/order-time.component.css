@@ -1,0 +1,215 @@
+.timeTypeModalWrapper{
+  z-index: 999;
+  width: 450px;
+  height: calc(100vh - 10rem);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-color: #F3F3ED;
+  border: 1px solid #A39172;
+  color: #65725B;
+  border-radius: 15px;
+  box-shadow: rgba(0,0,0,.0) 0 0 8px 1px;
+  margin: auto !important;
+  justify-content: space-between !important;
+  flex-direction: column !important;
+  right: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  top: 0 !important;
+  position: fixed !important;
+  display: flex !important;
+
+  display: none;
+visibility: hidden;
+  opacity: 0; /* Initially hidden */
+  transition: all 0.1s ease-in-out; /* Smooth transition */
+  z-index: 9999999;
+}
+
+.modalTitle{
+  padding: 1rem !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+}
+
+
+.modalTitle span{
+  --bs-text-opacity: 1;
+  color: rgba(33,37,41, 1) !important;
+  font-weight: 700 !important;
+  display: block !important;
+}
+
+.closeModalBtn{
+  width: 25px;
+    height: 25px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent !important;
+    cursor: pointer;
+    --bs-bg-opacity: 1;
+    padding: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    -webkit-appearance: button;
+    text-transform: none;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border-radius: 0;
+}
+
+.modalContent{
+  margin-bottom: 65px;
+  padding-top: 0 !important;
+  padding: 1rem !important;
+  flex-grow: 1 !important;
+  overflow: auto !important;
+}
+
+.scheduledDaysTabs{
+  overflow-x: auto;
+  flex-shrink: 0;
+  margin: 0 -1rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  border-top:    1px solid #dee2e6 !important;
+  display: flex !important;
+}
+
+
+.scheduledDaysTabs label{
+  scroll-snap-align: start;
+  user-drag: none;
+  touch-action: pan-y;
+  cursor: grab;
+  min-width: 19%;
+  margin: 0 !important;
+  position: relative !important;
+  display: inline-block;
+}
+
+.scheduledDaysTabs label input{
+  opacity: 0;
+  z-index: 9;
+  cursor: pointer;
+  height: 100% !important;
+  width: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
+  position: absolute !important;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.scheduledDaysTabs label div{
+  color: #fff !important;
+  min-height: 60px;
+  border-radius: .5rem !important;
+  --bs-text-opacity: 1;
+  text-align: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  display: flex !important;
+}
+.scheduledDaysTabs label div.active{
+  background-color: #65725B;
+}
+
+.scheduledDaysTabs label div span{
+  /* color: #fff; */
+  color: rgba(108,117,125, 1);
+
+}
+  .scheduledDaysTabs label div time{
+  /* color: #fff; */
+  color: rgba(108,117,125, 1);
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+
+.scheduledDaysTabs label div span.active{
+  color: #fff;
+
+}
+  .scheduledDaysTabs label div time.active{
+  color: #fff;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+
+.scheduledTimes{
+  margin: 0 -1rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  flex-grow: 1 !important;
+  overflow: auto !important;
+}
+
+.scheduledTimes  label {
+  margin: 0;
+}
+
+
+.scheduledTimes  label input{
+  opacity: 0;
+  cursor: pointer;
+  /* height: 100% ;
+  width: 100% ;
+  left: 0 ;
+  top: 0 ; */
+  position: absolute ;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.scheduledTimes  label span{
+  height: 45px;
+  --bs-text-opacity: 1;
+  color: rgba(33,37,41, 1) !important;
+  padding: 0.5rem !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  display: flex !important;
+}
+
+
+.orderTimeOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px); /* Apply blur */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: all .4s ease-in-out;
+  z-index: 1000;
+}
+
+
+.orderTimeOverlay.active {
+  opacity: 1;
+  visibility: visible;
+}

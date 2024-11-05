@@ -13,7 +13,7 @@ body {
   text-align: right;
   font-size: 15px !important;
   font-family: "Almarai", "Roboto" !important;
-  background-color: #f7f7f7;
+  background-color: var(--bodyBG) !important;
 }
 
 .body{
@@ -236,7 +236,7 @@ body {
   padding: 0 12px;
   text-align: right;
   width: 330px;
-  background-color: #65725B;
+  background-color: var(--GreenBackground);
 }
 
 /*  */
@@ -376,8 +376,8 @@ body {
   overflow-y: auto;
   max-height: calc(100vh - 6rem);
 
-  background-color: #fff;
-  border: 1px solid #ededed;
+  background-color: var(--cardsBG);
+  border: 1px solid var(--cardBorder);
   color: #000;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0) 0 0 8px 1px;
@@ -421,8 +421,8 @@ body {
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-  border: 1px solid rgb(237, 237, 237);
-  background-color: #fff;
+  border: 1px solid var(--cardBorder);
+  background-color: var(--cardsBG);
   transition: transform 0.4s ease;
   cursor: pointer;
 }
@@ -442,6 +442,7 @@ body {
 .card-content-name {
   font-weight: 700;
   line-height: 22.5px;
+  color: var(--Greentextcolor);
 }
 
 .card-content-price {
@@ -451,7 +452,7 @@ body {
   align-items: center;
 }
 .card-content-price-2 {
-  color: #65725B;
+  color: var(--Greentextcolor);
   background-color: rgba(0, 0, 0, 0.03);
   min-height: 27px;
   font-size: 14px;
@@ -469,7 +470,7 @@ body {
   justify-content: center;
 
   font-size: 14px;
-  color: #65725B;
+  color: var(--Greentextcolor);
 }
 
 .card-content-price-3 small {
@@ -611,7 +612,7 @@ body {
 }
 
 .tabsArea button.active {
-  background-color: #65725B;
+  background-color: var(--GreenBackground);
   color: #fff;
 }
 
@@ -623,7 +624,7 @@ body {
 .contentArea .card {
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
-  border: 1px solid rgb(237, 237, 237);
+  border: 1px solid var(--cardBorder);
   box-shadow: rgba(0, 0, 0, 0) 0px 0px 8px 1px;
   display: flex;
   font-size: 15px;
@@ -743,7 +744,7 @@ body {
   width: 100%;
 }
 .header-container {
-  background-color: #65725B; /* Updated background color to match the red in the image */
+  background-color: var(--GreenBackground); /* Updated background color to match the red in the image */
   padding: 10px 0;
 }
 .header-content{
@@ -821,6 +822,14 @@ color: #fff;
   font-weight: 700 !important;
 }
 
+@media (max-width: 380px) {
+  .food-type-2 {
+    font-size: 10px;
+
+  }
+}
+
+
 .food-type :nth-child(2) {
   transform: translateY(-1px);
 
@@ -883,7 +892,7 @@ color: #fff;
   right: -437px; /* Hidden initially */
   width: 437px;
   opacity: 0;
-  background-color: #65725B;
+  background-color: var(--GreenBackground);
   transition: all .6s ease-in-out;
   z-index: 1001;
   border-radius: 0.5rem;
@@ -1289,7 +1298,7 @@ display: none;
 
 
 .group-list li a.active{
-    background-color: #65725B;
+    background-color: var(--GreenBackground);
     color:  #fff;
 }
 
@@ -1429,4 +1438,26 @@ display: none;
   --waitingOutOfServiceStatusCircleBorderColor: #EDA33C;
   --waitingOutOfServiceStatusCircleTextColor: #000000;
   --dynamicBackgroundColor: rgba(255, 255, 255, 0.9);
+/*  */
+--GreenBackground : #65725B;
+--Greentextcolor : #65725B;
+--Greenbordercolor : #65725B;
+--priceColor: #D0A328;
+--cardsBG : #F3F3ED;
+--bodyBG : #fff;
+--borderColor : #A39172;
+--cardBorder: #A39172;
+
+
+}
+
+
+.card-content-price div div {
+  color: var(--priceColor);
+}
+
+
+
+span{
+  color: var(--Greentextcolor);
 }

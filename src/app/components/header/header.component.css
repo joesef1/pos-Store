@@ -4,7 +4,7 @@
   width: 100%;
 }
 .header-container {
-  background-color: #65725B;
+  background-color: var(--GreenBackground);
   padding: 10px 0;
 }
 .header-content{
@@ -178,4 +178,5 @@
 .timeTypeBtn span{
   font-size: 13px;
     line-height: 1;
+    color: #fff !important;
 }

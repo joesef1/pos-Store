@@ -23,7 +23,7 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-  border: 1px solid rgb(237, 237, 237);
+  border: 1px solid var(--cardBorder);
   background-color: #fff;
   transition: transform 0.4s ease;
   cursor: pointer;
@@ -53,7 +53,7 @@
   align-items: center;
 }
 .card-content-price-2 {
-  color: #65725B;
+  color: var(--Greentextcolor);
   background-color: rgba(0, 0, 0, 0.03);
   min-height: 27px;
   font-size: 14px;
@@ -71,7 +71,7 @@
   justify-content: center;
 
   font-size: 14px;
-  color: #65725B;
+  color: var(--Greentextcolor);
 }
 
 .card-content-price-3 small {

@@ -1,4 +1,5 @@
 .branchPeriodsModalWrapper{
+  min-height: 252px;
   transform: none;
     z-index: 9999999;
     width: 500px;
@@ -129,7 +130,7 @@
 
 
 .tabButton.current {
-  background-color: #65725B;
+  background-color: var(--GreenBackground);
   color:  #fff;
 }
 

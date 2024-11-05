@@ -148,7 +148,7 @@ overflow: hidden;
 }
 
 .itemInfo{
-  color: #65725B;
+  color: var(--Greentextcolor);
   font-weight: 700 !important;
   flex-grow: 1 !important;
 
@@ -262,13 +262,13 @@ background-color: rgb(218, 218, 218);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: 12px 12px;
-    background-color: #65725B;
+    background-color: var(--GreenBackground);
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 24 24'%3E%3Cpath d='M9.707 19.121a.997.997 0 01-1.414 0l-5.646-5.647a1.5 1.5 0 010-2.121l.707-.707a1.5 1.5 0 012.121 0L9 14.171l9.525-9.525a1.5 1.5 0 012.121 0l.707.707a1.5 1.5 0 010 2.121z' fill='%23fff' data-original='%23000000' xmlns='http://www.w3.org/2000/svg'/%3E%3C/svg%3E");
     transition: all .2s ease-in-out;
 } */
 
 .checkMark.checked {
-  background-color: #65725B;
+  background-color: var(--GreenBackground);
   /* background-image: url("https://cdn-icons-png.flaticon.com/512/14034/14034688.png"); */
 
 }
@@ -277,7 +277,7 @@ background-color: rgb(218, 218, 218);
   transform: translate(-3px, 1px);
 }
 .optionName {
-  color: #65725B; /* from color */
+  color: var(--Greentextcolor); /* from color */
   font-size: 13px; /* from font-size */
   transition: all .2s ease-in-out; /* from transition */
   align-items: center !important; /* from .align-items-center */
@@ -287,7 +287,7 @@ background-color: rgb(218, 218, 218);
 
 
 .optionPrice{
-  color: #65725B;
+  color: var(--Greentextcolor);
   font-size: 13px;
   transition: all .2s ease-in-out;
   display: flex !important;
@@ -441,6 +441,11 @@ background-color: rgb(218, 218, 218);
     font-size: inherit;
     line-height: inherit;
     cursor: pointer;
+}
+
+.btnStyle span{
+  color: #fff !important;
+
 }
 
 .qtyArea button{

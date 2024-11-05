@@ -192,16 +192,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+let isManualScroll = false; // Flag to differentiate manual vs auto scrolling
+let observer; // Store the observer to manage its activation
 
-//scroll to the category section functionality
+// Scroll to the category section functionality
 function scrollToCategory(event, categoryId) {
   event.preventDefault();
+  isManualScroll = true; // Indicate a manual scroll
 
   // Scroll to the clicked category smoothly
   const element = document.getElementById(categoryId);
   if (element) {
     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-    const offsetPosition = elementPosition - 125;
+
+    // Adjust offset dynamically for smaller screens to avoid blocking the top scroll
+    const offset = window.innerWidth < 768 ? 50 : 125; // Smaller offset on mobile screens
+    const offsetPosition = Math.max(elementPosition - offset, 0); // Ensure we don't scroll above the top
 
     window.scrollTo({
       top: offsetPosition,
@@ -211,6 +217,9 @@ function scrollToCategory(event, categoryId) {
 
   // Update the active link immediately on click
   updateActiveLink(categoryId);
+
+  // Reset the flag after scrolling ends
+  setTimeout(() => isManualScroll = false, 500); // Adjust delay if needed
 }
 
 function updateActiveLink(categoryId) {
@@ -224,30 +233,58 @@ function updateActiveLink(categoryId) {
   const activeLink = document.querySelector(`.group-list a[onclick*="${categoryId}"]`);
   if (activeLink) {
     activeLink.classList.add('active');
-  }
-}
 
-function handleScroll() {
-  const categories = document.querySelectorAll('.categorySection'); // Assuming each category section has the class "category"
-  let currentCategory = null;
-
-  categories.forEach(category => {
-    const categoryTop = category.getBoundingClientRect().top;
-
-    // Detect the category currently in view (e.g., within 200px from the top)
-    if (categoryTop <= 200 && categoryTop >= -200) {
-      currentCategory = category;
+    // Only scroll into view if not triggered by handleScroll
+    if (!isManualScroll) {
+      activeLink.scrollIntoView({
+        inline: 'center',
+        behavior: 'smooth'
+      });
     }
-  });
-
-  if (currentCategory) {
-    updateActiveLink(currentCategory.id);
   }
 }
 
+// Intersection Observer to detect when category sections enter view
+function createObserver() {
+  const options = {
+    root: null, // Use the viewport as the root
+    rootMargin: '0px',
+    threshold: 0.6 // Adjust to trigger when 60% of the section is visible
+  };
 
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !isManualScroll) {
+        updateActiveLink(entry.target.id);
+      }
+    });
+  }, options);
 
-// Listen to the scroll event
-window.addEventListener('scroll', handleScroll);
+  // Start observing each category section
+  document.querySelectorAll('.categorySection').forEach(section => {
+    observer.observe(section);
+  });
+}
 
+// Temporarily disable observer on manual scroll attempt
+function pauseObserver() {
+  isManualScroll = true;
+  if (observer) {
+    observer.disconnect();
+  }
+}
 
+// Re-enable observer after manual scroll ends
+function resumeObserver() {
+  isManualScroll = false;
+  if (observer) {
+    createObserver();
+  }
+}
+
+// Listen to touch events for mobile scrolling
+document.addEventListener('touchstart', pauseObserver, { passive: true });
+document.addEventListener('touchend', () => setTimeout(resumeObserver, 500)); // Add delay to resume observer after scrolling stops
+
+// Initialize observer on page load
+document.addEventListener('DOMContentLoaded', createObserver);

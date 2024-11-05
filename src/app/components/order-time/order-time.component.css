@@ -6,7 +6,7 @@
   scrollbar-width: none;
   background-color: #F3F3ED;
   border: 1px solid #A39172;
-  color: #65725B;
+  color: var(--Greentextcolor);
   border-radius: 15px;
   box-shadow: rgba(0,0,0,.0) 0 0 8px 1px;
   margin: auto !important;
@@ -127,7 +127,7 @@ visibility: hidden;
   display: flex !important;
 }
 .scheduledDaysTabs label div.active{
-  background-color: #65725B;
+  background-color: var(--GreenBackground);
 }
 
 .scheduledDaysTabs label div span{
